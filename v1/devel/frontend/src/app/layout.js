@@ -4,7 +4,6 @@ import { Box, createStyles } from '@mantine/core'
 
 import { AppHeader } from './header'
 import { AppFooter } from './footer'
-import { useAuth } from 'app'
 
 const useStyles = createStyles((theme) => {
 
@@ -38,7 +37,6 @@ const useStyles = createStyles((theme) => {
 const Layout = () => {
 
     const { classes } = useStyles()
-    const auth = useAuth()
 
     let links = [
         { link: '/',                label: 'Home'           },
@@ -46,11 +44,6 @@ const Layout = () => {
         { link: '/contacts',        label: 'Contact Us'     }
         ]
 
-    if (auth.loggedIn()) {
-        links.push({link: '/admin',     label: 'Dashboard'  })
-        links.push({link: '/logout',    label: 'Sign out' })
-    }
-    
     return (
         <Box className={classes.page}> 
           <AppHeader className={classes.header} links={links} /> 

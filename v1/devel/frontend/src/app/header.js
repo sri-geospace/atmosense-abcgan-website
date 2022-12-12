@@ -1,11 +1,10 @@
 import React from 'react'
-import { useBooleanToggle } from '@mantine/hooks'
+import { useDisclosure } from '@mantine/hooks'
 import { NavLink } from 'react-router-dom'
 import logo from 'support/assets/SRIMarkW.png'
 
 import { 
     createStyles, 
-    Box,
     Group, 
     Burger, 
     Paper, 
@@ -118,7 +117,7 @@ const useStyles = createStyles((theme) => ({
 
 const AppHeader = ({ links, className }) => {
 
-    const [opened, toggleOpened] = useBooleanToggle(false);
+    const [opened, { toggle }] = useDisclosure(false);
     const { classes, cx } = useStyles();
 
     const items = links.map((link) => (
@@ -127,9 +126,7 @@ const AppHeader = ({ links, className }) => {
             to={link.link}
             replace
             className={classes.link}
-            onClick={(event) => {
-                toggleOpened(false);
-            }}
+            onClick={(event) => { toggle(); }}
         >
           {link.label}
         </NavLink>
@@ -151,7 +148,7 @@ const AppHeader = ({ links, className }) => {
 
             <Burger
               opened={opened}
-              onClick={() => toggleOpened()}
+              onClick={toggle}
               className={classes.burger}
               size="sm"
               color="white"

@@ -1,5 +1,4 @@
 import React from 'react'
-//import { Link } from 'react-router-dom'
 import { createStyles } from '@mantine/core'
 
 const useStyles = createStyles((theme) => {
@@ -16,8 +15,6 @@ const useStyles = createStyles((theme) => {
     }
 })
 
-          //Release {release} &nbsp; <Link to='/admin/'>Admin</Link>
-          //
 const AppFooter = ({className, props}) => {
 
     const release = process.env.REACT_APP_RELEASE
