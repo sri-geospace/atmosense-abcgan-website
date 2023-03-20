@@ -16,7 +16,8 @@ import {
     Book, 
     BrandPython, 
     Paperclip,
-    Cloud
+    Cloud,
+    Notebook
 } from 'tabler-icons-react'
 
 const useStyles = createStyles((theme) => ({
@@ -43,10 +44,10 @@ const Home = () => {
 
     const features = [
         {
-            icon: Cloud,
+            icon: Notebook,
             title: 'Tutorial',
-            description: 'You can run the tutorial notebooks on Binder, a cloud-based Docker container with the abcgan package and tutorials.',
-            url: 'https://mybinder.org/v2/gh/sri-geospace/atmosense-abcgan/HEAD?labpath=tutorials%2Fdemo.ipynb'
+            description: 'A complete tutorial on using the different GANs is provided as a Python notebook.',
+            url: 'https://github.com/sri-geospace/atmosense-abcgan/blob/main/tutorials/demo.ipynb'
 
         },
         {
@@ -62,6 +63,13 @@ const Home = () => {
             url: 'https://github.com/sri-geospace/atmosense-abcgan' 
         },
         {
+            icon: Cloud,
+            title: 'Binder',
+            description: 'You can run the tutorial notebooks on Binder, a cloud-based Docker container with the abcgan package and tutorials.',
+            url: 'https://mybinder.org/v2/gh/sri-geospace/atmosense-abcgan/HEAD?labpath=tutorials%2Fdemo.ipynb'
+
+        },
+        {
             icon: Book,
             title: 'Documentation',
             description: 'API documentation is available on ReadTheDocs.',
@@ -71,7 +79,7 @@ const Home = () => {
             icon: Paperclip ,
             title: 'Zenodo',
             description: 'Each release of the project is archived at Zenodo with a citable DOI for publications.' ,
-            url: 'https://zenodo.org/record/6478352'
+            url: 'https://doi.org/10.5281/zenodo.5889628'
         }
     ]
 
